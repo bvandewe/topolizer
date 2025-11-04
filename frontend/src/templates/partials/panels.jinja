@@ -1,0 +1,217 @@
+<!-- Shape Overlay Panel for Shape Actions -->
+<div id="shapeOverlayPanel" class="shape-overlay-panel" style="display: none;">
+    <div class="panel-header" id="overlayPanelHeader" style="cursor: move;">
+        <strong>Edit Shape</strong>
+        <button type="button" class="btn-close" id="closeOverlayPanel"></button>
+    </div>
+    <div class="panel-body">
+        <!-- Two Column Layout -->
+        <div class="row g-3">
+            <!-- Left Column: Label/Text Customization -->
+            <div class="col-6">
+                <small class="text-muted d-block mb-2"><strong id="leftColumnTitle">Label Customization</strong></small>
+
+                <div class="mb-2">
+                    <label for="shapeLabelText" class="form-label" style="font-size: 0.85rem;" id="labelTextLabel">Label
+                        Text</label>
+                    <input type="text" class="form-control form-control-sm" id="shapeLabelText"
+                        placeholder="Shape label">
+                </div>
+
+                <div class="mb-2" id="labelPositionContainer">
+                    <label for="shapeLabelPosition" class="form-label" style="font-size: 0.85rem;">Label
+                        Position</label>
+                    <select class="form-select form-select-sm" id="shapeLabelPosition">
+                        <option value="below">Below</option>
+                        <option value="above">Above</option>
+                        <option value="right">Right</option>
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="shapeLabelColor" class="form-label" style="font-size: 0.85rem;"
+                        id="labelColorLabel">Label Color</label>
+                    <input type="color" class="form-control form-control-sm form-control-color w-100"
+                        id="shapeLabelColor" value="#333333">
+                </div>
+
+                <div class="mb-2">
+                    <label for="shapeLabelFontSize" class="form-label" style="font-size: 0.85rem;">Font Size</label>
+                    <input type="number" class="form-control form-control-sm" id="shapeLabelFontSize" min="8" max="48"
+                        value="14" placeholder="14">
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label" style="font-size: 0.85rem;">Label Style</label>
+                    <div class="btn-group btn-group-sm w-100" role="group">
+                        <input type="checkbox" class="btn-check" id="shapeLabelBold" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="shapeLabelBold" title="Bold">
+                            <i class="bi bi-type-bold"></i>
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="shapeLabelItalic" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="shapeLabelItalic" title="Italic">
+                            <i class="bi bi-type-italic"></i>
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="shapeLabelUnderline" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="shapeLabelUnderline" title="Underline">
+                            <i class="bi bi-type-underline"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Actions & Styling -->
+            <div class="col-6">
+                <small class="text-muted d-block mb-2"><strong>Actions</strong></small>
+
+                <div class="mb-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm w-100" id="duplicateShape"
+                        title="Duplicate this shape">
+                        <i class="bi bi-files"></i> Duplicate
+                    </button>
+                </div>
+
+                <div class="mb-2 btn-group w-100" role="group">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="moveToFront"
+                        title="Move to front">
+                        <i class="bi bi-layers"></i> To Front
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="moveToBack" title="Move to back">
+                        <i class="bi bi-layers-fill"></i> To Back
+                    </button>
+                </div>
+
+                <hr class="my-2">
+
+                <small class="text-muted d-block mb-2"><strong>Shape Styling</strong></small>
+
+                <div class="mb-2">
+                    <label for="shapeFillColor" class="form-label" style="font-size: 0.85rem;">Fill Color</label>
+                    <input type="color" class="form-control form-control-sm form-control-color w-100"
+                        id="shapeFillColor" value="#ffffff">
+                </div>
+
+                <div class="mb-2">
+                    <label for="shapeStrokeColor" class="form-label" style="font-size: 0.85rem;">Border Color</label>
+                    <input type="color" class="form-control form-control-sm form-control-color w-100"
+                        id="shapeStrokeColor" value="#000000">
+                </div>
+
+                <div class="mb-2">
+                    <label for="shapeStrokeWidth" class="form-label" style="font-size: 0.85rem;">Border Width</label>
+                    <select class="form-select form-select-sm" id="shapeStrokeWidth">
+                        <option value="0">None (No Border)</option>
+                        <option value="1">1px</option>
+                        <option value="2" selected>2px</option>
+                        <option value="3">3px</option>
+                        <option value="4">4px</option>
+                        <option value="5">5px</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Apply Changes Button -->
+        <div class="mb-2">
+            <button type="button" class="btn btn-success btn-sm w-100" id="applyShapeChanges">
+                <i class="bi bi-check-circle"></i> Apply Changes
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Connection Details Panel -->
+<div id="connectionOverlayPanel" class="shape-overlay-panel" style="display: none;">
+    <div class="panel-header" id="connectionPanelHeader" style="cursor: move;">
+        <strong>Connection Details</strong>
+        <button type="button" class="btn-close" id="closeConnectionPanel"></button>
+    </div>
+    <div class="panel-body">
+        <!-- Center Label (Full Width) -->
+        <div class="mb-3">
+            <label for="connectionCenterLabel" class="form-label" style="font-size: 0.85rem;">Center Label</label>
+            <input type="text" class="form-control form-control-sm" id="connectionCenterLabel"
+                placeholder="Center label (optional)" tabindex="1">
+        </div>
+
+        <!-- Source and Target Labels (Side by Side) -->
+        <div class="row g-2 mb-3">
+            <div class="col-6">
+                <label for="connectionSourceLabel" class="form-label" style="font-size: 0.85rem;">Source Label</label>
+                <input type="text" class="form-control form-control-sm" id="connectionSourceLabel"
+                    placeholder="Source label" tabindex="2">
+            </div>
+            <div class="col-6">
+                <label for="connectionTargetLabel" class="form-label" style="font-size: 0.85rem;">Target Label</label>
+                <input type="text" class="form-control form-control-sm" id="connectionTargetLabel"
+                    placeholder="Target label" tabindex="3">
+            </div>
+        </div>
+
+        <!-- Two Column Layout for Styling Options -->
+        <div class="row g-2">
+            <!-- Left Column: Line Attributes -->
+            <div class="col-6">
+                <small class="text-muted d-block mb-2"><strong>Line Style</strong></small>
+
+                <div class="mb-2">
+                    <label for="connectionStrokeWidth" class="form-label" style="font-size: 0.85rem;">Width</label>
+                    <select class="form-select form-select-sm" id="connectionStrokeWidth" tabindex="4">
+                        <option value="1">1px</option>
+                        <option value="2">2px</option>
+                        <option value="3" selected>3px</option>
+                        <option value="4">4px</option>
+                        <option value="5">5px</option>
+                        <option value="6">6px</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="connectionStrokeColor" class="form-label" style="font-size: 0.85rem;">Color</label>
+                    <input type="color" class="form-control form-control-sm form-control-color w-100"
+                        id="connectionStrokeColor" value="#6c757d" tabindex="5">
+                </div>
+
+                <div class="mb-2">
+                    <label for="connectionStrokeStyle" class="form-label" style="font-size: 0.85rem;">Style</label>
+                    <select class="form-select form-select-sm" id="connectionStrokeStyle" tabindex="6">
+                        <option value="solid" selected>Solid</option>
+                        <option value="dashed">Dashed</option>
+                        <option value="dotted">Dotted</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Right Column: Label Attributes -->
+            <div class="col-6">
+                <small class="text-muted d-block mb-2"><strong>Label Style</strong></small>
+
+                <div class="mb-2">
+                    <label for="connectionLabelFontSize" class="form-label" style="font-size: 0.85rem;">Size</label>
+                    <input type="number" class="form-control form-control-sm" id="connectionLabelFontSize" min="8"
+                        max="32" value="12" placeholder="12" tabindex="7">
+                </div>
+
+                <div class="mb-2">
+                    <label for="connectionLabelColor" class="form-label" style="font-size: 0.85rem;">Color</label>
+                    <input type="color" class="form-control form-control-sm form-control-color w-100"
+                        id="connectionLabelColor" value="#333333" tabindex="8">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="mb-2">
+            <button type="button" class="btn btn-primary btn-sm w-100" id="applyConnectionChanges" tabindex="9">
+                <i class="bi bi-check-lg"></i> Apply Changes
+            </button>
+        </div>
+    </div>
+</div>

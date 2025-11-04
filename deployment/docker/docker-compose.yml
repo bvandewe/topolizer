@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+    topology-builder:
+        build:
+            context: ../..
+            dockerfile: deployment/docker/Dockerfile
+        container_name: topology-builder
+        ports:
+            - '8000:8000'
+        environment:
+            - PYTHONUNBUFFERED=1
+            - LOG_LEVEL=info
+        restart: unless-stopped
+        healthcheck:
+            test: ['CMD', 'curl', '-f', 'http://localhost:8000/health']
+            interval: 30s
+            timeout: 10s
+            retries: 3
+            start_period: 40s
+        networks:
+            - topology-network
+
+networks:
+    topology-network:
+        driver: bridge
+
+volumes:
+    topology-data:
+        driver: local

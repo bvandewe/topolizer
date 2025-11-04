@@ -1,0 +1,69 @@
+// Connection Styles
+.connection {
+    pointer-events: none; // Don't interfere with shape interactions
+
+    .connection-line {
+        stroke: #6c757d;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .connection-hit-target {
+        pointer-events: auto; // Enable interactions for easier clicking
+        cursor: pointer;
+        stroke: transparent;
+        stroke-width: 12px;
+        fill: none;
+    }
+
+    .connection-label {
+        pointer-events: auto; // Enable interactions for dragging
+        cursor: move;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        font-size: 12px;
+        fill: #495057;
+        font-weight: bold;
+
+        // Prevent browser text selection highlighting
+        &::selection {
+            background: transparent;
+        }
+        &::-moz-selection {
+            background: transparent;
+        }
+    }
+}
+
+// Connection mode styles
+.connection-source {
+    filter: drop-shadow(0 0 8px rgba(40, 167, 69, 0.5));
+}
+
+// Active connection button
+#addConnectionBtn.active {
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+// Selected connection styles
+.connection.selected .connection-line {
+    stroke: $primary-color;
+    stroke-width: 3;
+    stroke-dasharray: 5, 5;
+    animation: dash 1s linear infinite;
+}
+
+// Selected label styles
+.connection-label.selected {
+    fill: $primary-color;
+    font-weight: bold;
+    filter: drop-shadow(0 0 3px rgba(52, 152, 219, 0.6));
+}
+
+// Label editing mode
+.connection-label-editing {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+}

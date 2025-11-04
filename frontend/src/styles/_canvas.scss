@@ -1,0 +1,180 @@
+// SVG Canvas Styles
+.topology-canvas {
+    cursor: grab;
+    background-color: #ffffff;
+
+    &.dragging-over {
+        cursor: copy;
+    }
+
+    &.selection-mode {
+        cursor: crosshair !important;
+
+        &:active {
+            cursor: crosshair !important;
+        }
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+// Selection Rectangle
+.selection-rectangle {
+    pointer-events: none;
+    rx: 4;
+    ry: 4;
+}
+
+// Selected Shape Highlight
+.shape-selected {
+    filter: drop-shadow(0 0 8px rgba(13, 110, 253, 0.6));
+}
+
+// Canvas Controls
+.canvas-controls {
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .btn {
+        transition: all 0.2s ease;
+        color: #6c757d;
+
+        &:hover {
+            background-color: #f8f9fa !important;
+            color: $primary-color;
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &.active {
+            background-color: $primary-color !important;
+            color: white !important;
+        }
+
+        i {
+            font-size: 1.1rem;
+        }
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        margin: 0;
+    }
+}
+
+// Dropped Shapes on Canvas
+.canvas-shape {
+    cursor: move;
+    transition: all 0.2s ease;
+
+    &:hover {
+        filter: brightness(1.1);
+        stroke-width: 3;
+    }
+
+    &.selected {
+        stroke: $primary-color;
+        stroke-width: 3;
+        stroke-dasharray: 5, 5;
+        animation: dash 1s linear infinite;
+    }
+
+    // Cisco shapes styling
+    &.cisco-shape {
+        cursor: move;
+
+        &:hover {
+            filter: brightness(1.15);
+        }
+
+        &.selected {
+            filter: brightness(1.2);
+
+            rect {
+                stroke: $primary-color;
+                stroke-width: 3;
+                stroke-dasharray: 5, 5;
+                animation: dash 1s linear infinite;
+            }
+        }
+    }
+}
+
+// Resize Handles
+.resize-handle {
+    pointer-events: all;
+    transition:
+        fill 0.1s ease,
+        stroke-width 0.1s ease;
+
+    &:hover {
+        fill: #1976d2 !important;
+        stroke-width: 2 !important;
+    }
+
+    &:active {
+        fill: #0d47a1 !important;
+    }
+}
+
+// Endpoint Handles (for lines and arrows)
+.endpoint-handle {
+    pointer-events: all;
+    transition:
+        fill 0.15s ease,
+        r 0.15s ease,
+        stroke-width 0.15s ease;
+
+    &:hover {
+        fill: #fb8c00 !important;
+        r: 7;
+        stroke-width: 2.5 !important;
+    }
+
+    &:active {
+        fill: #e65100 !important;
+        r: 8;
+    }
+}
+
+// API Response in Status Bar
+.response {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+
+    &.loading {
+        background-color: $warning-color;
+        color: white;
+    }
+
+    &.success {
+        background-color: $success-color;
+        color: white;
+    }
+
+    &.error {
+        background-color: $error-color;
+        color: white;
+    }
+}
+
+// Animations
+@keyframes dash {
+    to {
+        stroke-dashoffset: -10;
+    }
+}

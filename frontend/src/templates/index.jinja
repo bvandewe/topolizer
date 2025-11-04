@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'partials/head.jinja' %}
+
+<body class="d-flex flex-column vh-100">
+    {% include 'partials/navbar.jinja' %}
+
+    <main class="d-flex flex-grow-1 overflow-hidden">
+        {% include 'partials/sidebar.jinja' %}
+        {% include 'partials/canvas.jinja' %}
+    </main>
+
+    {% include 'partials/footer.jinja' %}
+
+    {% include 'partials/panels.jinja' %}
+    {% include 'partials/modals.jinja' %}
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+</body>
+
+</html>

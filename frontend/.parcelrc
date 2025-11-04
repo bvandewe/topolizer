@@ -1,0 +1,12 @@
+{
+    "extends": "@parcel/config-default",
+    "transformers": {
+        "*.{jinja,njk,html}": [
+            "...",
+            "@parcel/transformer-html"
+        ]
+    },
+    "optimizers": {
+        "*.html": []
+    }
+}

@@ -1,0 +1,62 @@
+// Alignment toolbar styles
+
+.alignment-toolbar {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1040;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    gap: 0;
+    align-items: center;
+
+    .btn-group {
+        margin: 0;
+    }
+
+    .btn {
+        border-color: #dee2e6;
+        padding: 6px 10px;
+
+        &:hover {
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        &:active,
+        &:focus {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        i {
+            font-size: 1rem;
+        }
+    }
+
+    .ms-2 {
+        margin-left: 0.5rem !important;
+    }
+}
+
+// Animation for showing toolbar
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.alignment-toolbar {
+    animation: slideDown 0.2s ease-out;
+}

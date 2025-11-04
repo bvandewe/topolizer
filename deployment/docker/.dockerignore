@@ -1,0 +1,10 @@
+# Add Docker-related files to .gitignore
+*.log
+.DS_Store
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/

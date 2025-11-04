@@ -1,0 +1,66 @@
+<!-- Topology Canvas -->
+<div class="canvas-container flex-grow-1 position-relative overflow-hidden">
+    <!-- Canvas Controls Overlay -->
+    <div class="canvas-controls position-absolute top-0 end-0 m-3 z-3">
+        <div class="btn-group-vertical bg-white rounded shadow-sm" role="group">
+            <!-- Selection Mode Toggle -->
+            <button class="btn btn-sm btn-light border-0 p-2" id="toggleSelectionMode" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-title="Toggle Selection Mode (V)">
+                <i class="bi bi-hand-index"></i>
+            </button>
+            <div class="border-bottom"></div>
+
+            <!-- Zoom Controls -->
+            <button class="btn btn-sm btn-light border-0 p-2" id="zoomInBtnFloating" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-title="Zoom In (Ctrl/Cmd +)">
+                <i class="bi bi-zoom-in"></i>
+            </button>
+            <button class="btn btn-sm btn-light border-0 p-2" id="zoomOutBtnFloating" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-title="Zoom Out (Ctrl/Cmd -)">
+                <i class="bi bi-zoom-out"></i>
+            </button>
+            <button class="btn btn-sm btn-light border-0 p-2" id="resetZoomBtnFloating" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-title="Reset Zoom (Ctrl/Cmd 0)">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </button>
+            <div class="text-center px-2 py-1 border-top">
+                <small class="badge bg-secondary" id="zoomLevel">100%</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid Canvas -->
+    <div class="canvas-wrapper h-100 w-100 position-relative overflow-auto" id="canvasWrapper">
+        <svg class="topology-canvas position-absolute" id="topologyCanvas" width="5000" height="5000" style="background-image: repeating-linear-gradient(0deg, #f8f9fa 0px, #f8f9fa 1px, transparent 1px, transparent 20px),
+                    repeating-linear-gradient(90deg, #f8f9fa 0px, #f8f9fa 1px, transparent 1px, transparent 20px);">
+            <!-- Grid pattern is handled by CSS background -->
+            <defs>
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e9ecef" stroke-width="1" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+
+            <!-- Selection Rectangle (for multi-select) -->
+            <rect id="selectionRect" class="selection-rectangle" style="display: none;" fill="rgba(13, 110, 253, 0.1)"
+                stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,5" />
+
+            <!-- Layer Groups for proper z-index ordering (SVG renders top to bottom, later = on top) -->
+            <g id="backgroundShapesLayer" data-layer="background-shapes">
+                <title>Background Shapes Layer</title>
+            </g>
+            <g id="connectionsLayer" data-layer="connections">
+                <title>Connections Layer</title>
+            </g>
+            <g id="shapesLayer" data-layer="shapes">
+                <title>Shapes Layer</title>
+            </g>
+            <g id="labelsLayer" data-layer="labels">
+                <title>Labels Layer</title>
+            </g>
+            <g id="interactionLayer" data-layer="interaction">
+                <title>Interaction Layer</title>
+            </g>
+        </svg>
+    </div>
+</div>

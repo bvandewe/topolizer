@@ -1,0 +1,72 @@
+// Shape Overlay Panel
+.shape-overlay-panel {
+    position: absolute;
+    background: #fff; // White background like Bootstrap modals
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1500;
+    min-width: 220px;
+    color: #212529; // Bootstrap dark text color
+    user-select: none; // Prevent text selection while dragging
+
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        border-bottom: 1px solid #dee2e6; // Bootstrap border color
+        font-size: 0.9rem;
+        cursor: move; // Show drag cursor
+        background: #f8f9fa; // Light gray header like Bootstrap
+        border-radius: 8px 8px 0 0;
+
+        // Add drag handle indicator
+        &::before {
+            content: '⋮⋮';
+            margin-right: 8px;
+            opacity: 0.5;
+            letter-spacing: -2px;
+            color: #6c757d;
+        }
+
+        &:hover {
+            background: #e9ecef;
+        }
+
+        &:active {
+            cursor: grabbing;
+        }
+
+        .btn-close {
+            padding: 0;
+            font-size: 0.7rem;
+            opacity: 0.6;
+            cursor: pointer; // Override move cursor for close button
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .panel-body {
+        padding: 12px;
+
+        .btn {
+            font-size: 0.85rem;
+        }
+
+        .form-control {
+            font-size: 0.85rem;
+        }
+
+        small {
+            color: #6c757d; // Bootstrap muted text color
+        }
+
+        hr {
+            border-color: #dee2e6; // Bootstrap border color
+        }
+    }
+}

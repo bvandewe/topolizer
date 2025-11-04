@@ -1,0 +1,139 @@
+<!-- Tools and Icons Panel -->
+<div class="tools-panel bg-light border-end p-3" style="width: 250px; min-width: 250px;">
+    <h6 class="fw-bold mb-3">Shapes</h6>
+
+    <!-- Basic Shapes Group (Collapsed by default) -->
+    <div class="shape-group mb-2">
+        <button id="basicShapesToggle"
+            class="shape-group-header w-100 d-flex justify-content-between align-items-center border-0 bg-transparent p-2 text-start"
+            type="button" data-bs-toggle="collapse" data-bs-target="#basicShapesCollapse" aria-expanded="false">
+            <span class="fw-semibold text-secondary">Basic</span>
+            <i class="bi bi-chevron-right text-secondary"></i>
+        </button>
+        <div class="collapse" id="basicShapesCollapse">
+            <div class="shape-group-content p-2">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="circle" title="Circle">
+                            <div class="shape-preview circle-preview"></div>
+                            <small>Circle</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="oval" title="Oval">
+                            <div class="shape-preview oval-preview"></div>
+                            <small>Oval</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="rectangle" title="Rectangle">
+                            <div class="shape-preview rectangle-preview"></div>
+                            <small>Rectangle</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="square" title="Square">
+                            <div class="shape-preview square-preview"></div>
+                            <small>Square</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="line" title="Line">
+                            <div class="shape-preview line-preview"></div>
+                            <small>Line</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="arrow" title="Arrow">
+                            <div class="shape-preview arrow-preview"></div>
+                            <small>Arrow</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="text" title="Text">
+                            <div class="shape-preview text-preview">T</div>
+                            <small>Text</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-2">
+
+    <!-- Cisco Shapes Group (Expanded by default) -->
+    <div class="shape-group mb-2">
+        <button id="ciscoShapesToggle"
+            class="shape-group-header w-100 d-flex justify-content-between align-items-center border-0 bg-transparent p-2 text-start"
+            type="button" data-bs-toggle="collapse" data-bs-target="#ciscoShapesCollapse" aria-expanded="true">
+            <span class="fw-semibold text-primary">Cisco</span>
+            <i class="bi bi-chevron-down text-primary"></i>
+        </button>
+        <div class="collapse show" id="ciscoShapesCollapse">
+            <div class="shape-group-content p-2">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="l2switch" data-cisco="true"
+                            title="L2 Switch">
+                            <div class="shape-preview cisco-l2switch-preview"></div>
+                            <small>L2 Switch</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="l3switch" data-cisco="true"
+                            title="L3 Switch">
+                            <div class="shape-preview cisco-l3switch-preview"></div>
+                            <small>L3 Switch</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="accesspoint" data-cisco="true"
+                            title="Access Point">
+                            <div class="shape-preview cisco-accesspoint-preview"></div>
+                            <small>Access Point</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="firewall" data-cisco="true"
+                            title="Firewall">
+                            <div class="shape-preview cisco-firewall-preview"></div>
+                            <small>Firewall</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="router" data-cisco="true" title="Router">
+                            <div class="shape-preview cisco-router-preview"></div>
+                            <small>Router</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="workstation" data-cisco="true"
+                            title="Workstation">
+                            <div class="shape-preview cisco-workstation-preview"></div>
+                            <small>Workstation</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="printer" data-cisco="true" title="Printer">
+                            <div class="shape-preview cisco-printer-preview"></div>
+                            <small>Printer</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="server" data-cisco="true" title="Server">
+                            <div class="shape-preview cisco-server-preview"></div>
+                            <small>Server</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="shape-tool" draggable="true" data-shape="cloud" data-cisco="true" title="Cloud">
+                            <div class="shape-preview cisco-cloud-preview"></div>
+                            <small>Cloud</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

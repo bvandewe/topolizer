@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <i class="bi bi-diagram-3 text-primary fs-4 me-2"></i>
+            <span class="fw-bold">Topology Builder</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link" id="newTopologyBtn"
+                        title="Create a new topology (Ctrl/Cmd+N)">
+                        <i class="bi bi-file-plus"></i> New
+                    </button>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="fileDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-folder"></i> File
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="fileDropdown">
+                        <li>
+                            <button class="dropdown-item" id="importBtn" title="Import topology from JSON">
+                                <i class="bi bi-upload"></i> Import JSON
+                            </button>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <button class="dropdown-item" id="exportBtn" title="Export topology as JSON">
+                                <i class="bi bi-download"></i> Export JSON
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" id="exportPngBtn" title="Export as PNG image">
+                                <i class="bi bi-image"></i> Export PNG
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link" id="helpBtn" title="Help & Documentation"
+                        data-bs-toggle="modal" data-bs-target="#helpModal">
+                        <i class="bi bi-question-circle"></i> Help
+                    </button>
+                </li>
+            </ul>
+            <button class="btn btn-outline-primary btn-sm" id="testApiBtn" title="Test API Connection">
+                <i class="bi bi-cloud-check"></i> Test API
+            </button>
+        </div>
+    </div>
+</nav>

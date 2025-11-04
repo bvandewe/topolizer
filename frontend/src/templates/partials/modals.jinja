@@ -1,0 +1,338 @@
+<!-- Connection Label Modal -->
+<div class="modal fade" id="connectionLabelModal" tabindex="-1" aria-labelledby="connectionLabelModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="connectionLabelModalLabel">
+                    <i class="bi bi-arrow-left-right"></i> Connection Labels
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="connectionLabelForm">
+                    <div class="mb-3">
+                        <label for="sourceLabel" class="form-label">Source Label</label>
+                        <input type="text" class="form-control" id="sourceLabel"
+                            placeholder="Enter label for source shape" required>
+                        <small class="form-text text-muted">Label displayed near the first shape</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="targetLabel" class="form-label">Target Label</label>
+                        <input type="text" class="form-control" id="targetLabel"
+                            placeholder="Enter label for target shape" required>
+                        <small class="form-text text-muted">Label displayed near the second shape</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="submitConnectionLabels">
+                    <i class="bi bi-check-lg"></i> Create Connection
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Topology Confirmation Modal -->
+<div class="modal fade" id="newTopologyModal" tabindex="-1" aria-labelledby="newTopologyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="newTopologyModalLabel">
+                    <i class="bi bi-exclamation-triangle"></i> New Topology
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to create a new topology?</p>
+                <p class="mb-0"><strong>This will clear the current canvas and remove all shapes, connections, and
+                        labels.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-warning" id="confirmNewTopology">
+                    <i class="bi bi-file-plus"></i> Create New Topology
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Alert Modal (for generic alerts) -->
+<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="alertModalHeader">
+                <h5 class="modal-title" id="alertModalLabel">
+                    <i class="bi bi-info-circle"></i> <span id="alertModalTitle">Alert</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="alertModalMessage" class="mb-0"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Shapes Confirmation Modal -->
+<div class="modal fade" id="deleteShapesModal" tabindex="-1" aria-labelledby="deleteShapesModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteShapesModalLabel">
+                    <i class="bi bi-trash"></i> Delete Shapes
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="deleteShapesMessage" class="mb-0">Are you sure you want to delete the selected shape(s)?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteShapes">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="helpModalLabel">
+                    <i class="bi bi-question-circle"></i> Help & Documentation
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Quick Start -->
+                <section class="mb-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-rocket-takeoff"></i> Quick Start
+                    </h5>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">Click a shape button in the left sidebar</li>
+                        <li class="list-group-item">Click on the canvas to place the shape</li>
+                        <li class="list-group-item">Use the interaction circle to edit or connect shapes</li>
+                        <li class="list-group-item">Save your work with File → Export JSON</li>
+                    </ol>
+                </section>
+
+                <!-- Features -->
+                <section class="mb-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-stars"></i> Key Features
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <i class="bi bi-bezier2 text-primary"></i> Shapes
+                                    </h6>
+                                    <ul class="small mb-0">
+                                        <li>Basic shapes (circle, rectangle, ellipse)</li>
+                                        <li>Cisco network devices</li>
+                                        <li>Drag to reposition</li>
+                                        <li>Resize with corner handles</li>
+                                        <li>Customizable labels & colors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <i class="bi bi-arrow-left-right text-primary"></i> Connections
+                                    </h6>
+                                    <ul class="small mb-0">
+                                        <li>Visual connections between shapes</li>
+                                        <li>Source & target labels</li>
+                                        <li>Draggable labels</li>
+                                        <li>Line styles (solid, dashed, dotted)</li>
+                                        <li>Auto-update when shapes move</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <i class="bi bi-arrows-move text-primary"></i> Canvas
+                                    </h6>
+                                    <ul class="small mb-0">
+                                        <li>Infinite canvas with grid</li>
+                                        <li>Zoom (25% to 400%)</li>
+                                        <li>Pan by dragging empty space</li>
+                                        <li>Grid snapping</li>
+                                        <li>Auto-save to browser</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <i class="bi bi-folder text-primary"></i> File Operations
+                                    </h6>
+                                    <ul class="small mb-0">
+                                        <li>Export as JSON</li>
+                                        <li>Export as PNG image</li>
+                                        <li>Import from JSON</li>
+                                        <li>Create new topology</li>
+                                        <li>State persistence</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Keyboard Shortcuts -->
+                <section class="mb-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-keyboard"></i> Keyboard Shortcuts
+                    </h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Shortcut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Delete selected shape</td>
+                                    <td><kbd>Delete</kbd> or <kbd>Backspace</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Close modal</td>
+                                    <td><kbd>Escape</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Submit form</td>
+                                    <td><kbd>Enter</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Deselect shape</td>
+                                    <td><kbd>Escape</kbd></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Usage Tips -->
+                <section class="mb-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-lightbulb"></i> Usage Tips
+                    </h5>
+                    <div class="accordion" id="tipsAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#tip1">
+                                    <i class="bi bi-tag me-2"></i> Adding Shape Labels
+                                </button>
+                            </h2>
+                            <div id="tip1" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                                <div class="accordion-body small">
+                                    Click on a shape, then click the <strong>edit icon</strong> (left half of
+                                    interaction circle).
+                                    Customize text, position, size, and color. Labels automatically move with shapes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#tip2">
+                                    <i class="bi bi-link-45deg me-2"></i> Creating Connections
+                                </button>
+                            </h2>
+                            <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                                <div class="accordion-body small">
+                                    Click the <strong>connect icon</strong> (right half of interaction circle) on the
+                                    source shape,
+                                    then click the target shape. Edit connection labels by clicking on the connection
+                                    line.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#tip3">
+                                    <i class="bi bi-image me-2"></i> Exporting High-Quality Images
+                                </button>
+                            </h2>
+                            <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                                <div class="accordion-body small">
+                                    Use <strong>File → Export PNG</strong> to save your topology as a high-resolution
+                                    image.
+                                    The export automatically crops to fit all content with proper padding.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#tip4">
+                                    <i class="bi bi-save me-2"></i> Saving Your Work
+                                </button>
+                            </h2>
+                            <div id="tip4" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                                <div class="accordion-body small">
+                                    Your topology is automatically saved to your browser. For backup, use
+                                    <strong>File → Export JSON</strong> to download a file you can import later.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About -->
+                <section>
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-info-circle"></i> About
+                    </h5>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <p class="small mb-2">
+                                <strong>Topology Builder</strong> is a modern, interactive web-based network topology
+                                diagram builder with an intuitive drag-and-drop interface.
+                            </p>
+                            <p class="small mb-0">
+                                Built with vanilla JavaScript, SASS, and FastAPI.
+                                <a href="https://github.com" target="_blank" class="text-decoration-none">
+                                    <i class="bi bi-github"></i> View on GitHub
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="bi bi-check-lg"></i> Got it!
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

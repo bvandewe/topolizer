@@ -1,0 +1,87 @@
+// Tools Panel Styles
+.tools-panel {
+    background-color: #f8f9fa !important;
+    border-right: 2px solid #dee2e6 !important;
+    overflow-y: auto;
+    flex-shrink: 0;
+
+    hr {
+        border-color: #dee2e6;
+        opacity: 0.5;
+    }
+}
+
+// Shape Group Styles (Collapsible sections)
+.shape-group {
+    .shape-group-header {
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04) !important;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+        }
+
+        i {
+            transition: transform 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        span {
+            font-size: 0.875rem;
+        }
+    }
+
+    // Rotate chevron when expanded
+    .shape-group-header[aria-expanded='true'] i {
+        transform: rotate(90deg);
+    }
+
+    .shape-group-content {
+        animation: fadeIn 0.2s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Shape Tool Styles
+.shape-tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: grab;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+
+    &:hover {
+        border-color: $primary-color;
+        background-color: #e9ecef;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    small {
+        margin-top: 4px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-align: center;
+    }
+}
