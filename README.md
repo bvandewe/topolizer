@@ -1,8 +1,17 @@
 # Topology Builder
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Release](https://img.shields.io/github/v/release/bvandewe/topolizer)](https://github.com/bvandewe/topolizer/releases)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://github.com/bvandewe/topolizer/pkgs/container/topolizer)
+[![Build](https://github.com/bvandewe/topolizer/actions/workflows/docker-build-publish.yml/badge.svg)](https://github.com/bvandewe/topolizer/actions/workflows/docker-build-publish.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+
 A modern, interactive web-based network topology diagram builder with an intuitive drag-and-drop interface. Built with vanilla JavaScript, SASS, and FastAPI.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![demo_v0.1.0](./docs/topolizer_v0.1.0.gif)
 
 ## ✨ Features
 
@@ -133,6 +142,30 @@ npm run dev
 
 Frontend dev server at: `http://localhost:1234`
 (Note: API features will require the backend to be running separately)
+
+**Option 4: Offline/Standalone Mode**
+
+For environments without internet access or server requirements, you can use the standalone static build:
+
+```bash
+# Build the standalone package
+./build-offline-package.sh
+
+# Extract and open the generated zip file
+unzip topology-builder-offline-v*.zip
+cd topology-builder-offline
+open index.html  # macOS
+# or double-click index.html in file explorer
+```
+
+This creates a fully self-contained version that runs entirely in the browser with no server needed. All data is stored in browser localStorage. Perfect for:
+
+- Air-gapped environments
+- Quick demos without server setup
+- Offline usage
+- Distribution to users without technical setup
+
+**Note**: The offline version has limited backend features but provides full diagram editing, export/import, and localStorage persistence.
 
 ## 📁 Project Structure
 
