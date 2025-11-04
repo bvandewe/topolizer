@@ -4,12 +4,15 @@
 [![Release](https://img.shields.io/github/v/release/bvandewe/topolizer)](https://github.com/bvandewe/topolizer/releases)
 [![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://github.com/bvandewe/topolizer/pkgs/container/topolizer)
 [![Build](https://github.com/bvandewe/topolizer/actions/workflows/docker-build-publish.yml/badge.svg)](https://github.com/bvandewe/topolizer/actions/workflows/docker-build-publish.yml)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-success)](https://bvandewe.github.io/topolizer/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 
 A modern, interactive web-based network topology diagram builder with an intuitive drag-and-drop interface. Built with vanilla JavaScript, SASS, and FastAPI.
+
+**[🚀 Try the Live Demo](https://bvandewe.github.io/topolizer/)**
 
 ![demo_v0.1.0](./docs/topolizer_v0.1.0.gif)
 

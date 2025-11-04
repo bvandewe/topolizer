@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **GitHub Pages Deployment** - Automatic deployment of live demo to GitHub Pages on every push to main
+- **Offline Package Builder** - Script to create standalone zip packages with no server dependencies
+  - OPEN_ME.html launcher with instructions
+  - README.txt with usage guide
+  - Relative paths for offline usage (no CORS issues)
+- **Footer Enhancements** - Added GitHub repository link and MIT License mention
+
+### Changed
+
+- **CI/CD Workflow Improvements**
+  - Split workflow into 3 separate jobs (build-frontend, build-docker, deploy-pages)
+  - Removed failing artifact attestation step
+  - Added artifact caching with 1-day retention for intermediate builds
+  - Automatic GitHub Pages deployment from main branch
+- **Documentation Updates**
+  - Added live demo badge and link to README
+  - Added offline deployment option documentation
+  - Updated badges with GitHub Pages link
+
 ## [0.1.0] - 2025-11-04
 
 ### Added
